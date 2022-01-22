@@ -183,7 +183,7 @@ moduleToJs (Module _ coms mn _ imps exps reExps foreigns decls) foreignInclude =
   withPureAnnotation js = case js of
     AST.App _ (AST.Indexer _ (AST.StringLiteral _ f) (AST.Var _ m)) _
       | m == EffectUnsafe.effectUnsafe && f == EffectUnsafe.unsafePerformEffect -> js
-    AST.App a f args -> AST.Pure Nothing $ AST.App a f $ map withPureAnnotation args
+    --AST.App a f args -> AST.Pure Nothing $ AST.App a f $ map withPureAnnotation args
     _ -> js
 
   withPos :: SourceSpan -> AST -> m AST

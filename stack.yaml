@@ -5,7 +5,7 @@ packages:
 - lib/purescript-cst
 ghc-options:
   # Build with advanced optimizations enabled by default
-  "$locals": -O2 -Werror
+  "$locals": -O2 -Werror -j8
 extra-deps:
 - language-javascript-0.7.0.0
 - git: https://github.com/hspec/hspec.git
@@ -30,3 +30,6 @@ flags:
   haskeline:
     # Avoids a libtinfo dynamic library dependency
     terminfo: false
+system-ghc: true
+compiler: ghc-8.10.7
+compiler-check: match-exact

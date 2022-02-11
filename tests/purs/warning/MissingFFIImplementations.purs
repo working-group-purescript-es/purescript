@@ -1,4 +1,4 @@
--- @shouldFailWith MissingFFIImplementations
+-- @shouldWarnWith MissingFFIImplementations
 module Main where
 
 foreign import yes :: Boolean
